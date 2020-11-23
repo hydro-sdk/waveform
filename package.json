@@ -1,6 +1,6 @@
 {
   "name": "@hydro-sdk/waveform",
-  "version": "0.0.1",
+  "version": "0.0.1-nightly.0",
   "description": "",
   "main": "index.js",
   "directories": {
