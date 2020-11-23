@@ -4,6 +4,7 @@ import 'package:waveform/nextNightlyVersion.dart';
 import 'package:waveform/publishPreRelease.dart';
 import 'package:waveform/readTags.dart';
 import 'package:waveform/readVersionFromPackage.dart';
+import 'package:waveform/writeNpmRc.dart';
 
 void main(List<String> args) async {
   var version = Version.parse(readVersionFromPackage());
@@ -17,5 +18,6 @@ void main(List<String> args) async {
   print("Publishing $versionToPublish");
 
   await createTag(version: versionToPublish);
+  writeNpmRc();
   await publishPreRelease(version: versionToPublish);
 }
