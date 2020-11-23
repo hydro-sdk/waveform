@@ -142,6 +142,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.3"
+  version:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: ab213d7380c17d452768fab657fb3503d7c5b813
+      url: "git://github.com/hydro-sdk/version"
+    source: git
+    version: "1.2.0"
 sdks:
   dart: ">=2.10.0-110 <2.11.0"
   flutter: ">=1.17.0 <2.0.0"

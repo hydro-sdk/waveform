@@ -11,6 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  version:
+    git:
+      url: git://github.com/hydro-sdk/version
+      ref: master
 
 dev_dependencies:
   flutter_test:
