@@ -15,6 +15,7 @@ dependencies:
     git:
       url: git://github.com/hydro-sdk/version
       ref: master
+  git: 1.0.1
 
 dev_dependencies:
   flutter_test:
