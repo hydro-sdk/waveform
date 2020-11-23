@@ -6,6 +6,7 @@ int nextNightlyVersion({
   @required List<String> priorVersions,
 }) {
   var res = priorVersions
+      .map((x) => x.trim())
       .map((x) => Version.parse(x))
       .where((x) => ((Version version) =>
           x.major == version.major &&
