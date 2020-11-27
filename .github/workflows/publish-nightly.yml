@@ -70,9 +70,11 @@ jobs:
         working-directory: waveform
 
       - name: Publish Nightly
+        env:
+          NPM_ORG_TOKEN: ${{secrets.NPM_ORG_TOKEN}}
         run: export NPM_TOKEN=$NPM_ORG_TOKEN; dart bin/tagAndPublishNightly.dart
         working-directory: waveform
       
       - name: Push Tags
-        run: git push --tags https://CHGIBB_HYDRO_PAT@github.com/hydro-sdk/waveform.git
+        run: git push --tags
         working-directory: waveform
