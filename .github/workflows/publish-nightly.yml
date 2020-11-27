@@ -60,6 +60,12 @@ jobs:
         run: git fetch --all --tags
         working-directory: waveform
 
+      - name: Configure Git Identity
+        run: |
+          git config --global user.email $PUBLISH_EMAIL
+          git config --global user.name $PUBLISH_USERNAME
+        working-directory: waveform
+
       - name: Publish Nightly
         run: export NPM_TOKEN=$NPM_ORG_TOKEN; dart bin/tagAndPublishNightly.dart
         working-directory: waveform
