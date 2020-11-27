@@ -62,8 +62,8 @@ jobs:
 
       - name: Configure Git Identity
         run: |
-          git config --global user.email $PUBLISH_EMAIL
-          git config --global user.name $PUBLISH_USERNAME
+          git config --global user.email "$PUBLISH_EMAIL"
+          git config --global user.name "$PUBLISH_USERNAME"
         working-directory: waveform
 
       - name: Publish Nightly
