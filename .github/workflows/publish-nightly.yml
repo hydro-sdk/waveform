@@ -61,6 +61,9 @@ jobs:
         working-directory: waveform
 
       - name: Configure Git Identity
+        env: 
+          PUBLISH_EMAIL: ${{secrets.PUBLISH_EMAIL}}
+          PUBLISH_USERNAME: ${{secrets.PUBLISH_USERNAME}}
         run: |
           git config --global user.email "$PUBLISH_EMAIL"
           git config --global user.name "$PUBLISH_USERNAME"
