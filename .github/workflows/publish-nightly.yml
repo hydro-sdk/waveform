@@ -48,8 +48,16 @@ jobs:
         with:
           path: 'waveform'
 
+      - name: Get packages for Waveform JS
+        run: npm install
+        working-directory: waveform
+
+      - name: Get packages for Waveform Dart
+        run: flutter pub get
+        working-directory: waveform
+
       - name: Publish Nightly
-        run: export NPM_TOKEN=$NPM_ORG_TOKEN dart bin/tagAndPublishNightly.dart
+        run: export NPM_TOKEN=$NPM_ORG_TOKEN; dart bin/tagAndPublishNightly.dart
         working-directory: waveform
       
       - name: Push Tags
