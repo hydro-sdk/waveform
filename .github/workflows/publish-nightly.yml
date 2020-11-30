@@ -24,9 +24,9 @@ jobs:
       - name: Clone Flutter repository with stable channel
         uses: actions/checkout@v2
         with:
-          repository: 'flutter/flutter'
-          ref: '1.22.0'
-          path: 'flutter'
+          repository: "flutter/flutter"
+          ref: "1.22.0"
+          path: "flutter"
           fetch-depth: 0
       - name: Add Flutter to the PATH for Unix
         run: echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
@@ -46,7 +46,7 @@ jobs:
       - name: Clone Waveform
         uses: actions/checkout@v2
         with:
-          path: 'waveform'
+          path: "waveform"
 
       - name: Get packages for Waveform JS
         run: npm install
@@ -55,13 +55,13 @@ jobs:
       - name: Get packages for Waveform Dart
         run: flutter pub get
         working-directory: waveform
-      
+
       - name: Fetch Tags
         run: git fetch --all --tags
         working-directory: waveform
 
       - name: Configure Git Identity
-        env: 
+        env:
           PUBLISH_EMAIL: ${{secrets.PUBLISH_EMAIL}}
           PUBLISH_USERNAME: ${{secrets.PUBLISH_USERNAME}}
         run: |
@@ -74,7 +74,15 @@ jobs:
           NPM_ORG_TOKEN: ${{secrets.NPM_ORG_TOKEN}}
         run: export NPM_TOKEN=$NPM_ORG_TOKEN; dart bin/tagAndPublishNightly.dart
         working-directory: waveform
-      
+
       - name: Push Tags
         run: git push --tags
         working-directory: waveform
+
+      - name: Trigger Dependents
+        run: |
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://github.com/repos/hydro-sdk/hydro-sdk/actions/workflows/waveform-upgrade/dispatches \
+            -d '{"depName": "@hydro-sdk/waveform","depVersion:":"1.2.3"}'
