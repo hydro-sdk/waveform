@@ -15,9 +15,8 @@ Future<void> triggerWorkflow({
         "Authorization": "token $authToken",
         "Accept": "application/vnd.github.v3+json",
       },
-      body: """
-       {"ref":"$ref", "inputs": {"depName": "@hydro-sdk/$dependencyName","depVersion":"$dependencyVersion" }}
-        """);
+      body:
+          '{"ref":"$ref", "inputs": {"depName": "@hydro-sdk/$dependencyName","depVersion":"$dependencyVersion" }}');
 
   print(res.statusCode);
   print(res.body);
