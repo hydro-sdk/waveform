@@ -10,7 +10,7 @@ Future<void> triggerWorkflow({
   @required Version dependencyVersion,
 }) async {
   var res = await post(
-      "https://github.com/repos/hydro-sdk/$repoName/actions/workflows/waveform-upgrade/dispatches",
+      "https://api.github.com/repos/hydro-sdk/$repoName/actions/workflows/waveform-upgrade.yml/dispatches",
       headers: {
         "Authorization": "token $authToken",
         "Accept": "application/vnd.github.v3+json",
