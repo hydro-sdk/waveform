@@ -81,8 +81,4 @@ jobs:
 
       - name: Trigger Dependents
         run: |
-          curl \
-            -X POST \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://github.com/repos/hydro-sdk/hydro-sdk/actions/workflows/waveform-upgrade/dispatches \
-            -d '{"depName": "@hydro-sdk/waveform","depVersion:":"1.2.3"}'
+          flutter pub run waveform:triggerDependent --repo="hydro-sdk" --ref="master" --token="${{secrets.DISPATCH_TOKEN}}" 
