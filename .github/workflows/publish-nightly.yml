@@ -82,3 +82,4 @@ jobs:
       - name: Trigger Dependents
         run: |
           flutter pub run waveform:triggerDependent --repo="hydro-sdk" --ref="master" --token="${{secrets.DISPATCH_TOKEN}}" 
+        working-directory: waveform
