@@ -1,7 +1,9 @@
 import 'package:args/args.dart';
 import 'package:version/version.dart';
+import 'package:waveform/flutterPubGet.dart';
 import 'package:waveform/installToPackage.dart';
 import 'package:waveform/installToPubspec.dart';
+import 'package:waveform/npmInstall.dart';
 
 void main(List<String> args) async {
   var parser = ArgParser();
@@ -17,5 +19,7 @@ void main(List<String> args) async {
   print("Installing $depName@$version");
 
   await installToPackage(name: depName, version: version);
+  await npmInstall();
   await installToPubspec(name: depName, version: version);
+  await flutterPubGet();
 }
