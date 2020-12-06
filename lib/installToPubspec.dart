@@ -11,7 +11,7 @@ Future<void> installToPubspec({
   final pubspec =
       getModifiableNode(loadYaml(await File("pubspec.yaml").readAsString()));
 
-  pubspec["dependencies"][name.split("/").elementAt(1)] = {
+  pubspec["dependencies"][name.split("/").elementAt(1).replaceAll("-", "_")] = {
     "git": {
       "url": "git://github.com/${name.replaceAll("@", "")}.git",
       "ref": version.toString(),
