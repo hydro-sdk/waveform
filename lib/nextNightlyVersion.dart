@@ -5,7 +5,6 @@ int nextNightlyVersion({
   @required String currentVersion,
   @required List<String> priorVersions,
 }) {
-  priorVersions.forEach((x) => print("\"$x\""));
   var res = priorVersions
       .map((x) => x.trim())
       .map((x) => Version.parse(x))
