@@ -18,5 +18,6 @@ Future<void> installToPubspec({
     }
   };
 
-  await File("pubspec.yaml").writeAsString(toYamlString(pubspec));
+  await File("pubspec.yaml").writeAsString(
+      toYamlString(pubspec).replaceAll("sdk: \"flutter\"", "sdk: flutter"));
 }
