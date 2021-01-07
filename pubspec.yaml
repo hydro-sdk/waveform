@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  github:
   version:
     git:
       url: git://github.com/hydro-sdk/version
