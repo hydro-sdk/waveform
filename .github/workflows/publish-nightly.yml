@@ -46,6 +46,7 @@ jobs:
       - name: Clone Waveform
         uses: actions/checkout@v2
         with:
+          token: ${{ secrets.WAVEFORM_BOT_PAT }}
           path: "waveform"
 
       - name: Get packages for Waveform JS
