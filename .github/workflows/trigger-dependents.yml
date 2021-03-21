@@ -16,6 +16,7 @@ jobs:
             TARGET: linux
     steps:
       - name: Extract Ref Names
+        id: refs
         run: |
           echo ::set-output name=SOURCE_NAME::${GITHUB_REF#refs/*/}
           echo ::set-output name=SOURCE_BRANCH::${GITHUB_REF#refs/heads/}
@@ -64,6 +65,6 @@ jobs:
 
       - name: Trigger Dependents
         run: |
-          flutter pub run waveform:triggerDependent --repo="hydro-sdk" --ref="master" --token="${{secrets.DISPATCH_TOKEN}}" --version="${{env.SOURCE_TAG}}"
-          flutter pub run waveform:triggerDependent --repo="hydro_demo" --ref="master" --token="${{secrets.DISPATCH_TOKEN}}" --version="${{env.SOURCE_TAG}}"
+          flutter pub run waveform:triggerDependent --repo="hydro-sdk" --ref="master" --token="${{secrets.DISPATCH_TOKEN}}" --version="${{steps.refs.outputs.SOURCE_TAG}}"
+          flutter pub run waveform:triggerDependent --repo="hydro_demo" --ref="master" --token="${{secrets.DISPATCH_TOKEN}}" --version="${{steps.refs.outputs.SOURCE_TAG}}"
         working-directory: waveform
