@@ -66,6 +66,6 @@ jobs:
       - name: Trigger Dependents
         run: |
           flutter pub run waveform:triggerDependent --repo="hydro-sdk" --ref="master" --token="${{secrets.DISPATCH_TOKEN}}" --version="${{steps.refs.outputs.SOURCE_TAG}}"
-          flutter pub run waveform:triggerDependent --repo="hydro_demo" --ref="master" --token="${{secrets.DISPATCH_TOKEN}}" --version="${{steps.refs.outputs.SOURCE_TAG}}"
           flutter pub run waveform:triggerDependent --repo="animated-list-app" --ref="main" --token="${{secrets.DISPATCH_TOKEN}}" --version="${{steps.refs.outputs.SOURCE_TAG}}"
+          flutter pub run waveform:triggerDependent --repo="counter-app" --ref="master" --token="${{secrets.DISPATCH_TOKEN}}" --version="${{steps.refs.outputs.SOURCE_TAG}}"
         working-directory: waveform
