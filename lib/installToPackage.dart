@@ -10,7 +10,7 @@ Future<void> installToPackage({
   Map<String, dynamic> package =
       json.decode(await File("package.json").readAsString());
 
-  package["devDependencies"].removeWhere((k, v) => k == name);
+  package["devDependencies"]?.removeWhere((k, v) => k == name);
   package["dependencies"][name] = version.toString();
 
   await File("package.json")
