@@ -1,6 +1,6 @@
 import 'package:http/http.dart';
 import 'package:meta/meta.dart';
-import 'package:version/version.dart';
+import 'package:hydro_sdk_version/version.dart';
 
 Future<void> triggerWorkflow({
   @required String authToken,

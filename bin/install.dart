@@ -1,5 +1,5 @@
 import 'package:args/args.dart';
-import 'package:version/version.dart';
+import 'package:hydro_sdk_version/version.dart';
 import 'package:waveform/flutterPubGet.dart';
 import 'package:waveform/installToPackage.dart';
 import 'package:waveform/installToPubspec.dart';

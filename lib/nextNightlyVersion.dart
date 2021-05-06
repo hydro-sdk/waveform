@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:version/version.dart';
+import 'package:hydro_sdk_version/version.dart';
 
 int nextNightlyVersion({
   @required String currentVersion,

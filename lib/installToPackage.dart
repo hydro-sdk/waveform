@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:version/version.dart';
+import 'package:hydro_sdk_version/version.dart';
 import 'package:meta/meta.dart';
 
 Future<void> installToPackage({

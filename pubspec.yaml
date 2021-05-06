@@ -1,6 +1,6 @@
 name: waveform
 description: A new Flutter package project.
-version: 0.0.1
+version: 0.0.1-nightly.35
 author:
 homepage:
 
@@ -11,10 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   github:
-  version:
-    git:
-      url: git://github.com/hydro-sdk/version
-      ref: master
+  meta:
+  hydro_sdk_version:
   git: 1.0.1
   http: 0.12.2
   args: 1.6.0

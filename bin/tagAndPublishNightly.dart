@@ -1,4 +1,4 @@
-import 'package:version/version.dart';
+import 'package:hydro_sdk_version/version.dart';
 import 'package:waveform/createTag.dart';
 import 'package:waveform/nextNightlyVersion.dart';
 import 'package:waveform/publishPreRelease.dart';

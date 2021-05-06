@@ -70,11 +70,19 @@ jobs:
           git config --global user.name "$PUBLISH_USERNAME"
         working-directory: waveform
 
-      - name: Publish Nightly
+      - name: Publish Nightly to NPM
         env:
           NPM_ORG_TOKEN: ${{secrets.NPM_ORG_TOKEN}}
         run: export NPM_TOKEN=$NPM_ORG_TOKEN; dart bin/tagAndPublishNightly.dart
         working-directory: waveform
+      
+      - name: Publish Nightly to Pub
+        uses: sakebook/actions-flutter-pub-publisher@v1.3.1
+        with:
+          credential: ${{ secrets.PUB_PUBLISHING_JSON }}
+          flutter_package: false
+          skip_test: true
+          dry_run: false
 
       - name: Push Tags
         run: git push --tags

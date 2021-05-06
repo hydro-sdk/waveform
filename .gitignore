@@ -106,3 +106,4 @@ dist
 .idea
 build
 .dart_tool
+.packages
