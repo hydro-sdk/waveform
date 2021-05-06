@@ -83,6 +83,7 @@ jobs:
           flutter_package: false
           skip_test: true
           dry_run: false
+          package_directory: waveform 
 
       - name: Push Tags
         run: git push --tags
