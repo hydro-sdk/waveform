@@ -20,6 +20,6 @@ void main(List<String> args) async {
 
   await createTag(version: versionToPublish);
   writeNpmRc();
-  writeChangelog(version: version);
+  writeChangelog(version: versionToPublish);
   await publishNpmPreRelease(version: versionToPublish);
 }
