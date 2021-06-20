@@ -1,9 +1,10 @@
 import 'package:hydro_sdk_version/version.dart';
 import 'package:waveform/createTag.dart';
 import 'package:waveform/nextNightlyVersion.dart';
-import 'package:waveform/publishPreRelease.dart';
+import 'package:waveform/publishNpmPreRelease.dart';
 import 'package:waveform/readTags.dart';
 import 'package:waveform/readVersionFromPackage.dart';
+import 'package:waveform/writeChangelog.dart';
 import 'package:waveform/writeNpmRc.dart';
 
 void main(List<String> args) async {
@@ -19,5 +20,6 @@ void main(List<String> args) async {
 
   await createTag(version: versionToPublish);
   writeNpmRc();
-  await publishPreRelease(version: versionToPublish);
+  writeChangelog(version: version);
+  await publishNpmPreRelease(version: versionToPublish);
 }

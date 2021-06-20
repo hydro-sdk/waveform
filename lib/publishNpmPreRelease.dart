@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 import 'package:hydro_sdk_version/version.dart';
 import 'package:yaml_modify/yaml_modify.dart';
 
-Future<void> publishPreRelease({@required Version version}) async {
+Future<void> publishNpmPreRelease({@required Version version}) async {
   var package = json.decode(File("package.json").readAsStringSync());
   package["version"] = version.toString();
 
