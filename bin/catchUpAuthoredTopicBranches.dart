@@ -23,8 +23,8 @@ void main(List<String> args) async {
   for (var pr in prs) {
       print("Merging the latest from ${pr.base?.ref} into ${pr.head?.ref}");
       await catchupBranch(
-        baseBranchName: pr.base!.ref!,
-        headBranchName: pr.head!.ref!,
+        baseBranchName: pr.base.ref,
+        headBranchName: pr.head.ref,
       );
   }
 }
