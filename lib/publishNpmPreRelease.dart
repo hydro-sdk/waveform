@@ -1,11 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:meta/meta.dart';
+//ignore: import_of_legacy_library_into_null_safe
 import 'package:hydro_sdk_version/version.dart';
+//ignore: import_of_legacy_library_into_null_safe
 import 'package:yaml_modify/yaml_modify.dart';
 
-Future<void> publishNpmPreRelease({@required Version version}) async {
+Future<void> publishNpmPreRelease({
+  required Version version,
+}) async {
   var package = json.decode(File("package.json").readAsStringSync());
   package["version"] = version.toString();
 

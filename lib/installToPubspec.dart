@@ -1,12 +1,13 @@
 import 'dart:io';
+//ignore: import_of_legacy_library_into_null_safe
 import 'package:hydro_sdk_version/version.dart';
-import 'package:meta/meta.dart';
 import 'package:yaml/yaml.dart';
+//ignore: import_of_legacy_library_into_null_safe
 import 'package:yaml_modify/yaml_modify.dart';
 
 Future<void> installToPubspec({
-  @required String name,
-  @required Version version,
+  required String name,
+  required Version version,
 }) async {
   final pubspec =
       getModifiableNode(loadYaml(await File("pubspec.yaml").readAsString()));

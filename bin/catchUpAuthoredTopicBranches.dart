@@ -15,15 +15,15 @@ void main(List<String> args) async {
           .pullRequests
           .list(RepositorySlug(results["org"], results["repo"]))
           .toList())
-      .where((x) => x.user.login == results["author"])
+      .where((x) => x.user?.login == results["author"])
       .where((x) => x.state == "open")
       .toList();
 
   for (var pr in prs) {
-      print("Merging the latest from ${pr.base.ref} into ${pr.head.ref}");
+      print("Merging the latest from ${pr.base?.ref} into ${pr.head?.ref}");
       await catchupBranch(
-        baseBranchName: pr.base.ref,
-        headBranchName: pr.head.ref,
+        baseBranchName: pr.base!.ref!,
+        headBranchName: pr.head!.ref!,
       );
   }
 }

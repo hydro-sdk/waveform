@@ -1,9 +1,9 @@
-import 'package:meta/meta.dart';
+//ignore: import_of_legacy_library_into_null_safe
 import 'package:hydro_sdk_version/version.dart';
 
 int nextNightlyVersion({
-  @required String currentVersion,
-  @required List<String> priorVersions,
+  required String currentVersion,
+  required List<String> priorVersions,
 }) {
   var res = priorVersions
       .map((x) => x.trim())

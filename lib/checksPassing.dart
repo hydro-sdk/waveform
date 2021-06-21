@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:meta/meta.dart';
-
-Future<bool> checksPassing({@required String prNum}) async {
+Future<bool> checksPassing({
+  required String prNum,
+}) async {
   var proc = await Process.run("gh", ["pr", "check", prNum]);
 
   if (proc.stderr != null) {

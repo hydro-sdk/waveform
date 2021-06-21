@@ -1,10 +1,8 @@
 import 'dart:io';
 
-import 'package:meta/meta.dart';
-
 Future<void> catchupBranch({
-  @required String baseBranchName,
-  @required String headBranchName,
+  required String baseBranchName,
+  required String headBranchName,
 }) async {
   var proc = await Process.run("git", ["checkout", headBranchName]);
 
