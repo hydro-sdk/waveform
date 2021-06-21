@@ -1,3 +1,4 @@
+//@dart = 2.9
 import 'package:args/args.dart';
 import 'package:github/github.dart';
 import 'package:waveform/catchupBranch.dart';
