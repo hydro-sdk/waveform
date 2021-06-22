@@ -13,8 +13,7 @@ dependencies:
   git: ^2.0.0
   http: ^0.13.3
   args: ^2.1.1
-  yaml: ^2.2.1
-  yaml_modify: ^0.1.4
+  yaml: ^3.0.0
   hydro_sdk_version: ^1.2.1
 
 dev_dependencies:

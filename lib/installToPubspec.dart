@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:hydro_sdk_version/version.dart';
 import 'package:yaml/yaml.dart';
 //ignore: import_of_legacy_library_into_null_safe
-import 'package:yaml_modify/yaml_modify.dart';
+import 'package:waveform/yaml_modify/yaml_writer.dart';
 
 Future<void> installToPubspec({
   required String name,

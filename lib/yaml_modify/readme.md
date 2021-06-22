@@ -1,0 +1,1 @@
+This is a vendoring of https://github.com/luuillu/yaml_modify in order to resolve conflicts in the required version of package:yaml
