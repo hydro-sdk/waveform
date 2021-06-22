@@ -16,9 +16,9 @@ dependencies:
   args: 2.1.1
   yaml: 3.1.0
   yaml_modify: 0.1.4
+  hydro_sdk_version: ^1.2.1
 
 dev_dependencies:
-  hydro_sdk_version: ^1.2.1
   flutter_test:
     sdk: flutter
 

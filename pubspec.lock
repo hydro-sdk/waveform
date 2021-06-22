@@ -96,7 +96,7 @@ packages:
     source: hosted
     version: "4.0.0"
   hydro_sdk_version:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: hydro_sdk_version
       url: "https://pub.dartlang.org"
