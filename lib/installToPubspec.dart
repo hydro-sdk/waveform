@@ -12,12 +12,17 @@ Future<void> installToPubspec({
   final pubspec =
       getModifiableNode(loadYaml(await File("pubspec.yaml").readAsString()));
 
-  pubspec["dependencies"][name.split("/").elementAt(1).replaceAll("-", "_")] = {
-    "git": {
-      "url": "git://github.com/${name.replaceAll("@", "")}.git",
-      "ref": version.toString(),
-    }
-  };
+  if (name != "@hydro-sdk/waveform") {
+    pubspec["dependencies"]
+        [name.split("/").elementAt(1).replaceAll("-", "_")] = {
+      "git": {
+        "url": "git://github.com/${name.replaceAll("@", "")}.git",
+        "ref": version.toString(),
+      }
+    };
+  } else {
+    pubspec["dependencies"]["waveform"] = version.toString();
+  }
 
   await File("pubspec.yaml").writeAsString(
       toYamlString(pubspec).replaceAll("sdk: \"flutter\"", "sdk: flutter"));
