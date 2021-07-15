@@ -1,9 +1,10 @@
 //ignore: import_of_legacy_library_into_null_safe
 import 'package:hydro_sdk_version/version.dart';
 
-int nextNightlyVersion({
+int nextMetadataVersion({
   required String currentVersion,
   required List<String> priorVersions,
+  required String metadata,
 }) {
   var res = priorVersions
       .map((x) => x.trim())
@@ -12,8 +13,8 @@ int nextNightlyVersion({
           x.major == version.major &&
           x.minor == version.minor &&
           x.patch == version.patch &&
-          x.leadingPreRelease() == "nightly")(Version.parse(currentVersion)))
-      .where((x) => x.leadingPreRelease() == "nightly")
+          x.leadingPreRelease() == metadata)(Version.parse(currentVersion)))
+      .where((x) => x.leadingPreRelease() == metadata)
       .where((x) => x.hasNumericPreRelease())
       .map((x) => x.numericPrelease())
       .toList()

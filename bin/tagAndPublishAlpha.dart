@@ -12,17 +12,17 @@ import 'package:waveform/writeNpmRc.dart';
 void main(List<String> args) async {
   var version = Version.parse(readVersionFromPackage());
 
-  var nextNightlyNumber = nextMetadataVersion(
+  var nextAlphaNumber = nextMetadataVersion(
     currentVersion: version.toString(),
     priorVersions: await readTags(),
-    metadata: "nightly",
+    metadata: "alpha",
   );
 
   var versionToPublish = Version(
     version.major,
     version.minor,
     version.patch,
-    preRelease: ["nightly", nextNightlyNumber.toString()],
+    preRelease: ["alpha", nextAlphaNumber.toString()],
   );
 
   print("Publishing $versionToPublish");
