@@ -12,7 +12,7 @@ Future<void> installToPubspec({
   final pubspec =
       getModifiableNode(loadYaml(await File("pubspec.yaml").readAsString()));
 
-  if (name != "@hydro-sdk/waveform") {
+  if (!RegExp("waveform").hasMatch(name)) {
     pubspec["dependencies"]
         [name.split("/").elementAt(1).replaceAll("-", "_")] = {
       "git": {
