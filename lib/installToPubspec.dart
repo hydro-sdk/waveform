@@ -9,6 +9,7 @@ Future<void> installToPubspec({
   required String name,
   required Version version,
 }) async {
+  print("installToPubspec");
   final pubspec =
       getModifiableNode(loadYaml(await File("pubspec.yaml").readAsString()));
 
