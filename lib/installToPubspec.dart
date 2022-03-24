@@ -19,7 +19,7 @@ Future<void> installToPubspec({
     pubspec["dependencies"]
         [name.split("/").elementAt(1).replaceAll("-", "_")] = {
       "git": {
-        "url": "git://github.com/${name.replaceAll("@", "")}.git",
+        "url": "https://github.com/${name.replaceAll("@", "")}.git",
         "ref": version.toString(),
       }
     };
