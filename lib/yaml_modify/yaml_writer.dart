@@ -1,4 +1,3 @@
-//@dart = 2.9
 // Copyright (c) 2015, Anders Holmgren. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
@@ -18,7 +17,7 @@ dynamic getModifiableNode(node) {
 }
 
 /// Serializes [node] into a String and returns it.
-String toYamlString(node, {bool sort}) {
+String toYamlString(node, {bool? sort}) {
   var sb = StringBuffer();
   _sort = sort ?? false;
   writeYamlString(node, sb);
@@ -78,6 +77,7 @@ void _writeYamlString(String node, StringSink ss, int indent) {
 
 /// cleanly formats multi-line strings, using 80 character max
 String _multiLine(String s, bool quotes, int indent) {
+  if(s.isEmpty) return '""';
   if (specialCharacters.contains(s[0])) {
     quotes = true;
   }
