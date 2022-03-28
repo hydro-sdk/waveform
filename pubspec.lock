@@ -101,7 +101,7 @@ packages:
       name: hydro_sdk_version
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.2"
+    version: "1.2.3"
   json_annotation:
     dependency: transitive
     description:
