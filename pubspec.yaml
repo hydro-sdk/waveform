@@ -14,7 +14,7 @@ dependencies:
   http: ^0.13.3
   args: ^2.1.1
   yaml: ^3.0.0
-  hydro_sdk_version: ^1.2.1
+  hydro_sdk_version: ^1.2.2
 
 dev_dependencies:
   flutter_test:
